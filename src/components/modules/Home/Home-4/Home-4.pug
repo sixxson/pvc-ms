@@ -1,0 +1,23 @@
+section.swiper-slide
+  .section-projects.h-full
+    div(class='flex h-full overflow-hidden')
+      - const projects = [{ img: "/img/item-section-3-1.jpg", title: "Dự án Chân đế JA&KA Gallaf 3" },{ img: "/img/item-section-3-2.jpg", title: "Su Tử Trắng Living Quarter Module" },{ img: "/img/item-section-3-3.jpg", title: "Dai Hùng 01 Wellhead Platform Topside" },{ img: "/img/item-section-3-4.jpg", title: "Lạc Đà Vàng Jacket – Lot LDV-A" }]
+            each project, i in projects
+              //- Mỗi item co giãn được
+              div(class="relative flex-1 overflow-hidden cursor-pointer transition-all duration-500 ease-in-out group/item hover:flex-[2]")
+                //- Ảnh nền
+                img(
+                  src=project.img
+                  alt=project.title
+                  class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:brightness-75 group-hover/item:brightness-100"
+                )
+                //- Overlay gradient
+                div(class="absolute inset-0 bg-gradient-to-t from-[#0C5919]/70 to-transparent transition-all duration-500")
+                //- Text
+                div(class="absolute bottom-5 left-0 w-full px-6 text-white translate-y-3 transition-all duration-500 group-hover/item:translate-y-0 z-10")
+                  h3(class="rem:text-[18px] font-semibold leading-tight line-clamp-1")= project.title
+    div(class='absolute rem:top-[30%] rem:left-[10%] flex flex-col gap-12 items-start ')
+      h1.title-h1.text-white CÔNG TRÌNH <br/> DỰ ÁN TIÊU BIỂU
+      a(href='/' class='text-white bg-[#2B378D] px-6 py-3 border-2 border-white flex items-center gap-2')
+        | XEM THÊM
+        img(src="/img/chevo-right.svg", alt="")

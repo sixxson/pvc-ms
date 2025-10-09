@@ -1,0 +1,42 @@
+.title-h1
+  @apply text-30 md:rem:text-[48px] rem:leading-[64px] font-extrabold uppercase
+  font-family: 'Exo 2', sans-serif
+.title-h2
+  @apply md:rem:text-[20px] rem:text-[16px] leading-7 font-bold
+.title-p
+  @apply text-base leading-5 opacity-60 
+.btn-change
+  @apply absolute cursor-pointer xl:bottom-1/2 md:-bottom-10 -bottom-17 -translate-y-1/2 bg-[#2B378D] border border-[#9FA1A3] p-2
+.btn-prev
+  @apply xl:-left-10 left-1/2 rem:-translate-x-[50px]
+.btn-next
+  @apply xl:-right-10 right-1/2 rem:translate-x-[50px]
+.bg-item
+  position: relative
+  background: linear-gradient(to top, #0C5919, #41924F)
+  border-radius: 24px
+  overflow: hidden
+  // phần khe trắng khi hover
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 0
+    height: 0
+    background: #fff
+    border-top-left-radius: 8px
+    border-top-right-radius: 8px
+    z-index: 30
+    transition: all 0.4s ease-in-out
+
+  &:hover::after
+    width: 30%
+    height: 4px
+
+@keyframes fadeUp
+  0%
+    opacity: 0
+  100%
+    opacity: 1

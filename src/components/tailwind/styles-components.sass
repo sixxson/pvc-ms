@@ -1,0 +1,9 @@
+@layer components
+	form.submitting
+		button
+			@apply pointer-events-none relative
+			&::before
+				content: ''
+				animation-duration: 0.5s
+				@apply w-5 h-5 border-3 border-primary-1/40 border-t-primary-1 rounded-full inline-block
+				@apply absolute animate-spin left-full ml-3

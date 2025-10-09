@@ -1,0 +1,35 @@
+.zoom-img
+	overflow: hidden
+	&:hover
+		img
+			transform: scale(1.05) translateZ(0)
+	img
+		transition: .5s all ease-in-out !important
+.ring-food
+	animation: 1.5s ring-food infinite ease-in-out alternate
+.ring-chili
+	animation: 1.5s ring-chili infinite ease-in-out alternate
+.ring-food-footer
+	animation: 1.5s ring-food-footer infinite ease-in-out alternate
+@keyframes ring-chili
+	0%
+		transform: rotate(8deg)
+	100%
+		transform: rotate(-8deg)
+@keyframes ring-food-footer
+	0%
+		transform: rotate(4deg)
+	100%
+		transform: rotate(-4deg)
+@keyframes ring-food
+	0%
+		transform: rotate(300deg)
+	100%
+		transform: rotate(330deg)
+@keyframes fade-in-down
+	0%
+		opacity: 0
+		transform: translateY(-100px)
+	100%
+		opacity: 1
+		transform: none

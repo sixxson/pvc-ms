@@ -1,0 +1,116 @@
+.wrap-button-slide
+	display: flex
+	align-items: center
+	justify-content: center
+	@apply gap-5 xl:gap-0
+	@apply mt-5 xl:mt-0
+	&.in-static
+		@apply mt-0
+		.btn-prev,.btn-next
+			@apply absolute top-1/2 -translate-y-1/2
+		.btn-prev
+			@apply left-0 ml-5 lg:ml-10 right-auto #{!important}
+		.btn-next
+			@apply right-0 mr-5 lg:mr-10 left-auto #{!important}
+	&.none-static
+		@apply mt-0
+		.btn-prev,.btn-next
+			position: absolute !important
+			top: 50%
+			transform: translateY(-50%)
+			@media (max-width: 1279.98px)
+				margin: 0 !important
+		.btn-prev
+			@media (max-width: 1023.98px)
+				right: 94%
+			@media (max-width: 575.98px)
+				right: auto
+				left: 10px
+		.btn-next
+			@media (max-width: 1023.98px)
+				left: 94%
+			@media (max-width: 575.98px)
+				left: auto
+				right: 10px
+	.btn-prev,.btn-next
+		z-index: 9
+		position: static
+		cursor: pointer
+		@screen xl
+			@apply absolute top-1/2 -translate-y-1/2
+		&.swiper-button-lock
+			@apply hidden
+	.btn-prev
+		left: 15px
+		@screen xl
+			margin-right: rr(30px)
+			right: 100%
+			left: auto
+	.btn-next
+		right: 15px
+		@screen xl
+			margin-left: rr(30px)
+			left: 100%
+			right: auto
+.btn.swiper-button-disabled
+	@apply opacity-30 cursor-not-allowed #{!important}
+.pagination-style-primary
+	@apply static mt-10 bg-neutral-100 #{!important}
+	&>*
+		@apply bg-red-500 #{!important}
+
+.swiper-column-auto
+	--mr: 15px
+	--spv: 1
+	@screen xl
+		--mr: calc(40/1920*100rem)
+	&[data-time='0']
+		.swiper-wrapper
+			transition-timing-function: linear
+	.swiper-slide.swiper-slide
+		@apply overflow-visible
+	.swiper-slide
+		width: calc(calc(100% - calc(var(--mr) * calc(var(--spv) - 1)))/var(--spv))
+		@apply h-auto
+		&:not(:last-child)
+			margin-right: var(--mr)
+	&.auto-2-column
+		.swiper-slide
+			@screen md
+				--spv: 2
+	&.auto-3-column
+		.swiper-slide
+			@screen md
+				--spv: 2
+			@screen lg
+				--spv: 3
+		&.show-half-mobile
+			@media (max-width: 767.98px)
+				.swiper-slide
+					width: 80%
+	&.auto-4-column
+		.swiper-slide
+			--spv: 1.5
+			@screen sm
+				--spv: 2.5
+			@screen lg
+				--spv: 3.5
+			@screen xl
+				--spv: 4
+	&.auto-5-column
+		.swiper-slide
+			@screen sm
+				--spv: 2
+			@screen md
+				--spv: 3
+			@screen lg
+				--spv: 4
+			@screen xl
+				--spv: 5
+	&.show-half-mobile
+		@media (max-width: 575.98px)
+			.swiper-slide
+				width: 80%
+	&.allow-touchMove
+		.swiper-slide
+			@apply cursor-grab

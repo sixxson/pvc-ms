@@ -1,0 +1,29 @@
+section.swiper-slide
+  div(class='xl:rem:px-[160px] h-screen items-center flex flex-col xl:justify-end justify-center px-4 pt-16')
+    .flex.gap-3.text-center.flex-col
+      h1.title-h1(class=' text-[#41924F]') LĨNH VỰC HOẠT ĐỘNG
+      p Xí nghiệp cung cấp đa dạng các dịch vụ logistic và cảng biển, từ lưu trữ, vận tải đến xếp dỡ và bảo dưỡng thiết bị
+    div(class='relative w-full')
+      div(class=' flex flex-col gap-10 md:py-20 py-0 swiper scrollswiper-1')
+        - var items =[1,2,3,4,5,6,7]
+        .swiper-wrapper
+          each item in items
+            .swiper.swiper-slide
+              div(id=`item-${item}` class=" group relative overflow-hidden rounded-6 bg-item aspect-[12/16] md:aspect-[10.5/16] lg:rem:aspect-[9/15] xl:rem:aspect-[9.5/15] w-fit transition-all duration-700 md:rem:h-[600px] rem:h-[450px]")
+                //- Khối ảnh (giữ tỉ lệ, bo góc, co vuông khi hover)
+                div(class="relative w-full h-full flex items-center justify-center transition-all duration-700")
+                  img(
+                    src="/img/item-section-3-1.jpg",
+                    alt="Khảo sát thiết kế",
+                    class='object-cover object-center w-full h-full rounded-4 transition-all duration-700 ease-in-out group-hover:w-[calc(100%-30px)] group-hover:h-[calc(100%-45%)] group-hover:translate-y-[15px] absolute top-0' 
+                  )
+                //- Text xuất hiện phía dưới ảnh
+                div(class="absolute rem:bottom-[20px] left-0 w-full flex flex-col gap-2 text-center justify-center items-center px-3 pb-6 opacity-0 translate-y-5 transition-all duration-700 group-hover:opacity-100 group-hover:translate-y-0 z-10")
+                  h2(class="rem:text-[24px] leading-8 font-bold text-white") Khảo sát thiết kế
+                  p(class="text-white rem:text-[18px] leading-6")
+                    | Khảo sát thiết kế, chế tạo, lắp đặt chân để giàn khoan, khối thượng tầng, các kết cấu kim loại, 
+                    | bồn bể chứa, bình chịu áp lực và hệ thống ống công nghệ.
+      .btn-prev.btn-change
+        img(src="/img/chevo-right.svg", alt="" class='w-5 h-5 rotate-180')
+      .btn-next.btn-change
+        img(src="/img/chevo-right.svg", alt="" class='w-5 h-5 ')

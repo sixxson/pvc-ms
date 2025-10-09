@@ -1,0 +1,26 @@
+section.swiper-slide
+  div(class='bg-[url(/img/bg-img-section-5.jpg)] h-full bg-section-5 bg-center bg-cover bg-no-repeat ' )
+    div(class='container h-full xl:justify-end justify-center flex flex-col gap-6 py-10')
+      div(class='flex justify-between items-center')
+        h1(class='title-h1 md:rem:text-[48px] text-2xl text-[#41924F] font-bold') TIN TỨC MỚI NHẤT
+        a(href='/' class='bg-[#2B378D] px-6 py-3 border-2 text-white font-bold border-white flex items-center gap-4')
+          | XEM THÊM
+          img(src="/img/chevo-right.svg", alt="")
+      div(class='grid grid-cols-2 gap-6')
+        div(class='lg:col-span-1 col-span-full bg-white p-4 flex flex-col gap-3 group')
+          div(class='flex-1 relative overflow-hidden')
+            img(src="/img/item-section-3-1.jpg", alt="" class='lozad w-full h-full object-cover transition-all duration-300 group-hover:scale-110')
+          .inline-flex.flex-col.gap-2.items-start.relative
+            p.flex.gap-2.title-span
+              span 21/07/2025
+              span Tin công ty
+            h2(class='rem:text-[24px] rem:leading-[32px] group-hover:text-[#41924F] line-clamp-2') PVC-MS stands in Top 1,000 Enterprises pay corporate income tax in Vietnam for 5 consecutive years
+            p.title-p.leading-6.line-clamp-2 Sản phẩm truyền thống của PVC-MS là thi công các kết cấu giàn khoan, bồn bể, đường ống công nghệ
+
+        div(class='lg:col-span-1 col-span-full flex flex-col gap-6')
+            +ItemSection5()
+            div(class='hidden lg:block')
+              +ItemSection5()
+            div(class='hidden lg:block')
+              +ItemSection5()
+

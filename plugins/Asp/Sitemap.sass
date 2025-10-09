@@ -1,0 +1,45 @@
+.sitemap
+	@apply py-15
+.sitemap-heading h1
+	@apply text-lg text-center uppercase mx-auto
+	@apply relative w-max max-w-full pb-1.5 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-white
+.AspNet-TreeView
+	> ul
+		@apply sm:flex sm:flex-wrap xl:overflow-hidden
+	.AspNet-TreeView-Root
+		@apply pb-5 ml-2 first:ml-0 xl:ml-0 xl:pr-5 xl:relative xl:overflow-hidden
+		a
+			@apply inline-flex items-center px-7 py-3 text-xl bg-blue-400 text-white rounded-full max-w-full relative z-2 xl:text-sm xl:px-5 xl:hover:bg-red-300
+		> a
+			@apply before:absolute before:left-full before:w-[120%] before:h-[1px] before:bg-gray-300 before:-z-1
+		.AspNet-TreeView-Collapse
+			@apply hidden
+		li
+			@apply pl-3
+			a
+				@apply bg-blue-400/[.9]
+			li
+				a
+					@apply bg-blue-400/[.75]
+				li
+					a
+						@apply bg-blue-400/[.6]
+		> ul
+			> li
+				&:last-child
+					@apply before:absolute before:w-[1px] before:h-full before:left-0 before:top-[65%] before:-translate-y-1/2 before:bg-white before:z-1 before:pointer-events-none
+				&.AspNet-TreeView-Leaf
+					&:last-child
+						@apply before:top-full
+		&:last-child
+			> a
+				@apply before:hidden
+	.AspNet-TreeView-Root, .AspNet-TreeView-Leaf, .AspNet-TreeView-Parent
+		> ul
+			@apply ml-5 overflow-hidden
+			> li
+				@apply mt-2 relative z-1
+				@apply after:absolute after:w-[1px] after:h-[200%] after:left-0 after:top-1/2 after:-translate-y-full after:bg-gray-300 after:pointer-events-none
+				> a
+					@apply relative
+					@apply before:absolute before:w-3 before:-z-1 before:h-[1px] before:bg-gray-300 before:top-1/2 before:-translate-y-1/2 before:right-full before:pointer-events-none

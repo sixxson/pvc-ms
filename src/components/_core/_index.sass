@@ -1,0 +1,18 @@
+@import 'src/components/_core/_mixins'
+@import 'plugins/Wordpress/form'
+
+.edit-link i:before
+	content: '✏️'
+
+.vertical-swiper,
+.pagination-swiper
+	height: 100% // đảm bảo swiper không tự kéo giãn vô hạn
+	overflow: hidden
+
+.vertical-swiper .swiper-wrapper,
+.pagination-swiper .swiper-wrapper
+	height: 100%
+
+.vertical-swiper .swiper-slide,
+.pagination-swiper .swiper-slide
+	min-height: 0 // tránh 0 height

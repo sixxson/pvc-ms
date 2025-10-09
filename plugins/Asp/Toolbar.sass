@@ -1,0 +1,15 @@
+.cmsadminpanel
+	ul
+		display: flex
+		align-items: center
+	&.isClose
+		.navbar-nav
+			@apply hidden
+		#pullmenucms
+			i
+				&::after
+					content: 'Mở'
+	#pullmenucms
+		i
+			&::after
+				content: 'Đóng'

@@ -1,0 +1,20 @@
+{
+	"_comment": "Set minify to false for faster builds and easier debugging. Set to true for production-ready compressed files.",
+	"minify": true,
+	"font": [
+		"src/assets/fonts/**"
+	],
+	"js": [
+		"node_modules/jquery/dist/jquery.min.js",
+		"node_modules/@fancyapps/ui/dist/fancybox.umd.js",
+		"node_modules/countup.js/dist/countUp.umd.js",
+		"plugins/menuSpy/menuspy.js",
+		"plugins/ScrollTo/jquery.scrollTo.min.js"
+	],
+	"css": [
+		"node_modules/swiper/swiper-bundle.min.css",
+		"node_modules/aos/dist/aos.css",
+		"node_modules/@fancyapps/ui/dist/fancybox.css",
+		"plugins/FontAwesome.Pro.6.1.0/css/all.min.css"
+	]
+}

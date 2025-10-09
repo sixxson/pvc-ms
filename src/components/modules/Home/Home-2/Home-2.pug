@@ -1,0 +1,13 @@
+section.swiper-slide
+  .section-home-2.h-full 
+    div(class=' container mx-auto flex flex-col md:gap-10 gap-0 md:py-10')
+      div(class='lg:w-7/12 flex flex-col md:gap-10 gap-5 md:pb-10 py-0 border-b-2 border-white/50 items-start')
+        h1(class='title-h1 capitalize') GIỚI THIỆU
+        p(class='title-h2')
+          | Sản phẩm truyền thống của PVC-MS là thi công các kết cấu giàn khoan...
+        a(href='/' class='bg-[#2B378D] px-6 py-3 border-2 border-white flex items-center gap-2')
+          | XEM THÊM
+          img(src="/img/chevo-right.svg", alt="")
+      div(class='lg:w-7/12 flex flex-col md:gap-10 gap-5 md:rem:pt-[60px] p-0 pb-16')
+        +ItemColsSectionHome2([{number: '40+', unit: 'tỷ VNĐ', desc: 'Hình thành và phát triển'},{number: '100+', unit: 'dự án', desc: 'Đã thực hiện'},{number: '50%', unit: 'nhân sự', desc: 'Đội ngũ chuyên nghiệp'}])
+        +ItemColsSectionHome2([{number:'10.000', desc:'Tấn Khối kết cấu có thể hạ thủy'},{number:'125+',desc:'Dự án hoàn thành'},{number:'23ha',desc:'Quy mô bãi cảng thi công'}])
