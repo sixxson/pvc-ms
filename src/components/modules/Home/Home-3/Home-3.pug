@@ -1,4 +1,4 @@
-section.swiper-slide
+section.swiper-slide.bg-light
   div(class='xl:rem:px-[160px] h-screen items-center flex flex-col xl:justify-end justify-center px-4 pt-16')
     .flex.gap-3.text-center.flex-col
       h1.title-h1(class=' text-[#41924F]') LĨNH VỰC HOẠT ĐỘNG
@@ -8,7 +8,7 @@ section.swiper-slide
         - var items =[1,2,3,4,5,6,7]
         .swiper-wrapper
           each item in items
-            .swiper.swiper-slide
+            .swiper.swiper-slide.flex.justify-between
               div(id=`item-${item}` class=" group relative overflow-hidden rounded-6 bg-item aspect-[12/16] md:aspect-[10.5/16] lg:rem:aspect-[9/15] xl:rem:aspect-[9.5/15] w-fit transition-all duration-700 md:rem:h-[600px] rem:h-[450px]")
                 //- Khối ảnh (giữ tỉ lệ, bo góc, co vuông khi hover)
                 div(class="relative w-full h-full flex items-center justify-center transition-all duration-700")

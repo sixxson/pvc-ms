@@ -13,7 +13,6 @@ import {
  * @param swiperInit
  */
 export function swiperInit() {
-
   new Swiper(".pagination-swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -25,7 +24,7 @@ export function swiperInit() {
     // },
     modules: [Pagination, Navigation, Autoplay, EffectFade],
     pagination: {
-      el: ".section-home-1 .swiper-pagination",
+      el: ".swiper-pagination-home-1",
       clickable: true,
       renderBullet: function (index, className) {
         const item_p = [
@@ -35,24 +34,53 @@ export function swiperInit() {
           "Phát triển bền vững",
         ];
         return (
-          '<p class=" col-span-1 text-white !bg-transparent border-white cursor-pointer w-full '+ className +' ">' + item_p[index % item_p.length] +"</p>"
+          '<p class=" col-span-1 text-white !bg-transparent border-white cursor-pointer w-full ' + className +' ">' +item_p[index % item_p.length] +"</p>"
         );
       },
     },
   });
-  
-  new Swiper('.vertical-swiper', {
-    direction: 'vertical',
+
+  new Swiper(".vertical-swiper", {
+    direction: "vertical",
     slidesPerView: 1,
     mousewheel: true,
-    modules: [Pagination, Navigation, Autoplay, EffectFade, Mousewheel],
+    modules: [Pagination, Mousewheel],
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="circle ${className}"></span>`;
+      },
+    },
+    on: {
+      // chạy khi hiệu ứng chuyển slide đã xong
+      slideChangeTransitionEnd: function () {
+        const paginations = document.querySelectorAll(".swiper-pagination");
+        console.log("🔸 Pagination found:", paginations.length);
+
+        const pagination = this.pagination.el;
+        const activeSlide = this.slides[this.activeIndex];
+
+        console.log("🔸 Pagination element:", pagination);
+        console.log("🔹 Slide index:", this.activeIndex);
+        console.log("🔹 Slide classList:", activeSlide.classList.value);
+
+        if (!pagination || !activeSlide) return;
+
+        pagination.classList.remove("on-dark", "on-light");
+
+        if (activeSlide.classList.contains("bg-dark")) {
+          pagination.classList.add("on-dark");
+        } else {
+          pagination.classList.add("on-light");
+        }
+
+        console.log("✅ Pagination classList:", pagination.classList.value);
+      },
     },
   });
 
-new Swiper(".scrollswiper-1", {
+  new Swiper(".scrollswiper-1", {
     slidesPerView: 1,
     spaceBetween: 24,
     // autoplay: {
@@ -76,13 +104,11 @@ new Swiper(".scrollswiper-1", {
         slidesPerView: 3,
         spaceBetween: 24,
       },
-      1200:{
+      1200: {
         slidesPerView: 4,
         spaceBetween: 24,
-      }
+      },
     },
     modules: [Navigation, Pagination, Autoplay],
   });
-
-  
 }
