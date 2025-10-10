@@ -49,24 +49,24 @@ export function swiperInit() {
       el: ".swiper-pagination",
       clickable: true,
       renderBullet: function (index, className) {
-        return `<span class="circle ${className}"></span>`;
+        const title = [
+          'banner',
+          'gioi thieu',
+          'linh vu hoat dong',
+          'du an tieu bieu',
+          'tin tuc'
+        ]
+        return `<p class="circle ${className}"><span class="title-pagination">${title[index % title.length]}</span></p>`;
       },
     },
     on: {
       // chạy khi hiệu ứng chuyển slide đã xong
       slideChangeTransitionEnd: function () {
-        const paginations = document.querySelectorAll(".swiper-pagination");
-        console.log("🔸 Pagination found:", paginations.length);
-
+        // const paginations = document.querySelectorAll(".swiper-pagination");
         const pagination = this.pagination.el;
         const activeSlide = this.slides[this.activeIndex];
 
-        console.log("🔸 Pagination element:", pagination);
-        console.log("🔹 Slide index:", this.activeIndex);
-        console.log("🔹 Slide classList:", activeSlide.classList.value);
-
         if (!pagination || !activeSlide) return;
-
         pagination.classList.remove("on-dark", "on-light");
 
         if (activeSlide.classList.contains("bg-dark")) {
@@ -74,8 +74,6 @@ export function swiperInit() {
         } else {
           pagination.classList.add("on-light");
         }
-
-        console.log("✅ Pagination classList:", pagination.classList.value);
       },
     },
   });
