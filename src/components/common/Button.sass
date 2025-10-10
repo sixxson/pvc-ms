@@ -1,0 +1,11 @@
+.btn
+	@apply cursor-pointer select-none transition-all duration-300
+	&.loading
+		@apply bg-transparent #{!important}
+		span,.icon
+			@apply opacity-0
+		&::before
+			content: ''
+			animation-duration: 0.5s
+			@apply w-5 h-5 border-3 border-white/40 border-t-white rounded-full inline-block
+			@apply absolute animate-spin

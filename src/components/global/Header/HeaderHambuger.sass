@@ -1,0 +1,96 @@
+.header-hambuger
+	@apply flex flex-col gap-2 items-center justify-center cursor-pointer z-30 
+	@apply relative xl:hidden xl:ml-[calc(58/19.2*1rem)] block
+	@apply w-[50px] h-[50px] 
+	.hamburger-icon
+		@apply flex justify-center items-center w-full h-full bg-[#0A701C]
+		span
+			transform-origin: center center
+			will-change: transform
+			transition-timing-function: cubic-bezier(1,0,0,1)
+			@apply transition-all duration-300 pointer-events-none
+			@apply w-[25px] h-[2px] bg-white absolute
+			&:nth-child(1)
+				top: calc((50% - 1px) - 6px)
+			&:nth-child(3)
+				top: calc((50% - 1px) + 6px)
+			&:nth-child(2)
+				@apply opacity-100
+.header-nav-mobile
+	@apply flex justify-between items-center flex-1
+	.header-menu-mobile
+		@apply absolute top-full right-0 w-full z-20 h-screen
+		@apply transition-all opacity-0 duration-200 ease-linear pointer-events-none
+		ul
+			@apply flex flex-col gap-6 bg-[#0A701C] h-screen py-5
+			li
+				@apply relative text-white text-[20px] font-bold border-b-2 px-[20px] py-2
+body.isOpenMenu
+	header
+		@apply bg-white
+		.header-hambuger
+			@apply bg-[#41924F]
+			span
+				@apply bg-white
+				&:nth-child(1)
+					rotate: 45deg
+					top: calc((50% - 1px))
+				&:nth-child(2)
+					@apply opacity-0
+				&:nth-child(3)
+					top: calc((50% - 1px))
+					rotate: -45deg
+		.header-menu-mobile
+			@apply opacity-100 pointer-events-auto
+@keyframes leftBar
+	0%
+		height: 0
+		left: 0
+		top: 100%
+	20%
+		height: 100%
+		left: 0
+		top: 0
+	40%
+		height: 0
+		left: 0
+		top: 0
+@keyframes topBar
+	0%, 20%
+		left: 0
+		top: 0
+		width: 0
+	40%
+		left: 0
+		top: 0
+		width: 100%
+	60%
+		left: calc(100% - 1px)
+		top: 0
+		width: 0
+@keyframes rightBar
+	0%, 40%
+		height: 0
+		left: calc(100% - 1px)
+		top: 0
+	60%
+		height: 100%
+		left: calc(100% - 1px)
+		top: 0
+	80%
+		height: 0
+		left: calc(100% - 1px)
+		top: 100%
+@keyframes bottomBar
+	0%, 60%
+		left: 100%
+		top: 100%
+		width: 0
+	80%
+		left: 0
+		top: 100%
+		width: 100%
+	100%
+		left: 0
+		top: 100%
+		width: 0

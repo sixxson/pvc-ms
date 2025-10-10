@@ -1,0 +1,27 @@
+.home-section-6
+  @apply text-white bg-cover bg-no-repeat 
+  background-image: url('/img/bg-footer.png') 
+  .footer-section-list
+    @apply flex justify-between items-start rem:py-[80px] xl:flex-row flex-col xl:gap-0 gap-10
+    h1
+      @apply font-bold rem:leading-[46,8px] rem:text-[36px]
+    .image-logo
+      @apply flex lg:gap-10
+      img
+        @apply rem:w-[253px] object-cover
+  .footer-middle
+    @apply border-t border-[#E5E5E5] py-10
+    .subscribe
+      @apply w-full
+      .subscribefrm
+        @apply flex gap-2
+        .subscribeemail
+          @apply px-5 py-[10px] bg-[#41924F] text-white flex-1
+        .subscribebutton
+          @apply flex items-center gap-2 bg-[#2B378D] px-6 py-2 border-2 border-white
+    .img-footer
+      @apply flex gap-3
+      img
+        @apply rem:w-[72px] object-cover
+.div-home-6
+  @apply h-full flex flex-col justify-end  

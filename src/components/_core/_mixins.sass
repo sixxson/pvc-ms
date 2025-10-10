@@ -1,0 +1,83 @@
+@function r($size)
+	@return (calc($size / 16px * 1rem))
+@function rr($size)
+	@return (calc($size / 1920px * 100rem))
+@function re($size)
+	@return (calc($size / 1920px * 100em))
+=img-ratio($ratio,$fit:cover)
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding-top: $ratio *100%
+	img,iframe,video
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: $fit
+		transition: .3s ease-in-out all
+=line($line)
+	overflow: hidden
+	display: -webkit-box
+	text-overflow: ellipsis
+	-webkit-line-clamp: $line
+	-webkit-box-orient: vertical
+=hover-underline($ratio, $color)
+	position: relative
+	transition: all .3s ease
+	background-image: linear-gradient(180deg,transparent $ratio, $color 0)
+	background-repeat: no-repeat
+	background-size: 0 100%
+	&:hover
+		background-size: 100% 100%
+=type-none
+	list-style-type: none
+	margin: 0
+	padding: 0
+=lh-fz($fontSize, $lineHeight)
+	line-height: calc( $lineHeight / $fontSize) !important
+=scroll
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-track
+		background: $body
+	&::-webkit-scrollbar-thumb
+		background: $main
+	&::-webkit-scrollbar-thumb:hover
+		background: $main
+=transition-base
+	transition: transform .6s cubic-bezier(.75,0,.175,1),visibility .6s cubic-bezier(.75,0,.175,1)
+=LanguageVertical
+	.wpml-ls-legacy-dropdown
+		@apply w-auto #{!important}
+	.wpml-ls
+		&>ul
+			@apply flex items-center
+			&>li
+				@apply relative
+				&:hover
+					ul
+						@apply opacity-100 visible pointer-events-auto
+				&>a
+					@apply py-1 inline-flex px-0 border-0 bg-transparent items-center #{!important}
+					&::after
+						content: '\f107'
+						@apply font-awesome font-light ml-1 flex-shrink-0 border-0 static #{!important}
+				&>ul
+					@apply absolute top-full left-1/2 -translate-x-1/2
+					@apply opacity-0 transition-300 invisible pointer-events-none
+					@apply border-t-0 right-auto
+					li
+						a
+							@apply bg-white rounded-md px-3 py-1 text-sm shadow-dropshadow-light border border-Primary-1 hover:bg-Primary-1 hover:text-Primary-1 text-Primary-1
+=HeaderLanguage
+	.header-language
+		.header-language-active
+			@apply flex items-center
+			li:not(.wpml-ls-current-language)
+				@apply hidden
+		.header-language-list
+			li.wpml-ls-current-language
+				@apply hidden

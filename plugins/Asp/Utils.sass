@@ -1,0 +1,22 @@
+.h-full-module
+	[class*="Module"]
+		height: 100%
+.pagination
+	@apply flex items-center justify-center
+	@apply gap-2.5 mb-10 mt-10
+	li
+		&.active
+			a,span
+				@apply bg-primary-main text-white border-primary-main
+		a,span
+			@apply w-[calc(50/1920*100rem)] h-[calc(50/1920*100rem)] rounded-full flex-center bg-transparent text-base font-light text-[#333333]  transition-all duration-300 leading-none border-primary-radial text-primary-radial border
+			@apply hover:bg-primary-main hover:text-white hover:border-primary-main
+			&.NextPage,&.LastPage,&.FirstPage, &.BackPage
+				@apply hidden
+.notfound .notfound-404 h1
+	-webkit-background-clip: text
+	color: transparent
+	background-image: linear-gradient(to right, #ed1b24, #bc0049) !important
+	display: inline-block
+.notfound a
+	background: linear-gradient(90deg,#ed1b24,#bc0049) !important

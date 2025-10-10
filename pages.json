@@ -1,0 +1,33 @@
+{
+  "all": true,
+  "pages": [
+    {
+      "enabled": false,
+      "src": "index.pug"
+    },
+    {
+      "enabled": false,
+      "src": "about.pug"
+    },
+    {
+      "enabled": false,
+      "src": "contact.pug"
+    },
+    {
+      "enabled": false,
+      "src": "Contact.pug"
+    },
+    {
+      "enabled": false,
+      "src": "Home.pug"
+    },
+    {
+      "enabled": false,
+      "src": "NewsDetail.pug"
+    },
+    {
+      "enabled": false,
+      "src": "NewsList.pug"
+    }
+  ]
+}

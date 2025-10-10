@@ -1,0 +1,39 @@
+$widthImage: calc(159/1920*100rem)
+$heightImage: calc(50/1920*100rem)
+span.fa-exclamation-triangle
+	&::before
+		display: none
+	@apply text-red-500 text-sm font-primary py-2 #{!important}
+.btn.btn-default.frm-btn-reset
+	@apply hidden
+.frm-btnwrap, .frm-captcha
+	opacity: 0
+.wrap-form-submit
+	@apply flex items-center flex-wrap justify-between gap-5 md:gap-4
+	.frm-captcha,.frm-btnwrap
+		opacity: 1
+	.frm-captcha
+		@apply flex flex-row-reverse items-center flex-1
+		.RadCaptcha
+			width: fit-content !important
+			@apply relative
+			&>span
+				@apply absolute top-full left-0 text-red-500
+			&>div>div
+				@apply flex items-center
+			img
+				width: $widthImage !important
+				height: $heightImage !important
+				@apply border border-[#EEEEEE] #{!important}
+			a.rcRefreshImage
+				@apply text-0 before:content-['\f01e'] before:font-awesome before:text-2xl before:mx-3 before:inline-block w-full h-full text-[#333333]
+				@apply flex-center #{!important}
+		.frm-captcha-input
+			@apply flex-1
+			label
+				@apply hidden
+	.frm-btnwrap
+		@media (max-width: 767.98px)
+			@apply flex-[0_0_100%]
+		label
+			@apply hidden

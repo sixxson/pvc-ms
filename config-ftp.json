@@ -1,0 +1,78 @@
+{
+	"connection": {
+		"host": "185.250.38.17",
+		"user": "previewcanhcam_itmj",
+		"password": "FD8G!qzchG4Catye",
+		"parallel": 10,
+		"secure": false,
+		"secureOptions": null,
+		"connTimeout": 10000,
+		"pasvTimeout": 10000,
+		"keepalive": 10000
+	},
+	"deployment": {
+		"basePath": "/public_html/wp-content/themes/canhcamtheme",
+		"localFolder": "dist",
+		"mappings": {
+			"styles": {
+				"local": "css",
+				"remote": "styles",
+				"description": "Deploy CSS files",
+				"exclude": []
+			},
+			"scripts": {
+				"local": "js",
+				"remote": "scripts",
+				"description": "Deploy JavaScript files",
+				"exclude": []
+			},
+			"images": {
+				"local": "img",
+				"remote": "img",
+				"description": "Deploy image files",
+				"exclude": []
+			},
+			"fonts": {
+				"local": "fonts",
+				"remote": "fonts",
+				"description": "Deploy font files",
+				"exclude": []
+			},
+			"all": {
+				"local": ".",
+				"remote": ".",
+				"description": "Deploy all files",
+				"exclude": [
+					"*.map",
+					"*.log"
+				]
+			}
+		}
+	},
+	"shortcuts": {
+		"u": {
+			"action": "deployScripts",
+			"description": "Deploy Scripts"
+		},
+		"i": {
+			"action": "deployStyles",
+			"description": "Deploy Styles"
+		},
+		"m": {
+			"action": "deployImages",
+			"description": "Deploy Images"
+		},
+		"f": {
+			"action": "deployFonts",
+			"description": "Deploy Fonts"
+		},
+		"a": {
+			"action": "deployAll",
+			"description": "Deploy All Files"
+		},
+		"d": {
+			"action": "toggleAutoDeploy",
+			"description": "Toggle Auto Deploy Mode"
+		}
+	}
+}

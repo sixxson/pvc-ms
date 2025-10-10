@@ -1,0 +1,68 @@
+header
+	@apply fixed top-0 left-0 w-screen
+	@apply text-black z-30 bg-white
+	font-family: 'Exo 2', sans-serif
+	.header-logo, .header-logo-mobile
+		@apply rem:w-[104px] rem:h-[104px]
+		a
+			img
+				@apply w-full h-full object-cover
+	.header-logo-mobile
+		@apply xl:hidden block
+	.header-language
+		@apply flex items-center gap-2 text-[#41924F]
+		position: relative
+		&::after
+			content: '|'
+			position: absolute
+			color: #41924F				
+			left:50%
+			transform: translateX(-50%)	
+		.header-language-active
+			@apply flex items-center cursor-pointer	
+			li.wpml-ls-current-language
+				@apply opacity-100
+			li:not(.wpml-ls-current-language)
+				@apply hidden
+		.header-language-list
+			@apply cursor-pointer
+			li:not(.wpml-ls-current-language)
+				@apply opacity-50
+			li.wpml-ls-current-language
+				@apply hidden  
+// .active
+// 	@apply bg-white text-black
+.header-menu
+	@apply flex justify-end gap-7 rem:leading-[25px] items-center content-stretch
+	.item-menu
+		&:hover
+			@apply text-[#41924F] border-b-4 border-[#41924F] transition-all duration-200 
+.header-menu-top
+	@apply border-b border-[#E5E5E5] rem:text-[18px] font-semibold
+	.link-header-top
+		@apply rem:py-[9px] 
+.header-menu-bottom
+	.item-nav-bar
+		@apply py-7 
+		a
+			@apply py-7
+.phone-number
+		@apply flex items-center gap-2
+		i
+			@apply text-[#FB0200] p-2 bg-white
+.header-search
+	@apply rem:p-[10px] text-[#41924F]
+.social-media
+	@apply flex justify-center
+	a
+		@apply text-white flex justify-center items-center rem:p-[10px]
+		&:hover
+			@apply bg-[#FB0200] transition-all duration-200
+	.social-facebook
+		@apply rem:p-[10px] bg-[#1067E5]
+	.social-youtube
+		@apply rem:p-[10px] bg-[#FF0000]
+.header-nav-desktop
+	@apply hidden xl:flex items-center justify-between
+
+

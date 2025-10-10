@@ -1,0 +1,76 @@
+header
+  nav.relative
+    .header-nav-desktop(class='xl:rem:px-[160px] px-[16px]')
+    
+      .header-logo
+        a(href='/')
+          img(src='./img/logo.svg' class='lozad' alt='Logo' )
+      div
+        ul.header-menu-top.header-menu
+          li
+            a.link-header-top.item-menu(href='#') Tuyển dụng
+          li
+            a.link-header-top.item-menu(href='#') Liên hệ
+          .phone-number
+            <i class="fa-regular fa-phone"></i>
+            |  1900 636 648
+          div(class='flex gap-3')
+            .header-language
+              +HeaderLanguage()
+            .flex
+              .header-search
+                <i class="fa-regular fa-magnifying-glass"></i>
+              .social-media
+                a.social-facebook.flex.justify-center.items-center(href="") 
+                  <i class="fa-brands fa-facebook-f w-5 h-5"></i> 
+                a.social-youtube(href="") 
+                  <i class="fa-brands fa-youtube"></i>
+        ul(class='header-menu header-menu-bottom gap-8 font-bold rem:text-[20px] leading-7')
+          li.item-nav-bar
+            a.item-menu(href='#') 
+              <i class="fa-regular fa-house"></i>
+          li.item-nav-bar
+            a.item-menu(href='#') Giới thiệu
+          li.item-nav-bar
+            a.item-menu(href='#') Lĩnh vực hoạt động
+          li.item-nav-bar
+            a.item-menu(href='#') Dự án tiêu biểu
+          li.item-nav-bar
+            a.item-menu(href='#') Quan hệ cổ đông
+          li.item-nav-bar
+            a.item-menu(href='#') ESG
+          li.item-nav-bar
+            a.item-menu(href='#') Tin tức - Thư viện
+          li.item-nav-bar
+            a.item-menu(href='#') Tuyển dụng
+          li.item-nav-bar
+            a.item-menu(href='#') Liên hệ
+    .header-nav-mobile(class='xl:rem:px-[160px] px-[16px]')
+      .header-logo-mobile
+        a(href='/')
+          img(src='./img/logo.svg' class='lozad' alt='Logo' )
+      .header-hambuger
+        .hamburger-icon
+          span
+          span
+          span
+      .header-menu-mobile
+        ul
+          li
+            a(href='#') Trang chủ
+          li
+            a(href='#') Giới thiệu
+          li
+            a(href='#') Lĩnh vực hoạt động
+          li
+            a(href='#') Dự án tiêu biểu
+          li
+            a(href='#') Quan hệ cổ đông
+          li
+            a(href='#') ESG
+          li
+            a(href='#') Tin tức - Thư viện
+          li
+            a(href='#') Tuyển dụng
+          li
+            a(href='#') Liên hệ
